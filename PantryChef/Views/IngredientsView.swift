@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IngredientsView: View {
-    @ObservedObject var viewModel = IngredientsViewModel()
+    @StateObject var viewModel = IngredientsViewModel()
     
     let columns = [
         GridItem(.adaptive(minimum: 100))
@@ -49,14 +49,14 @@ struct IngredientsView: View {
                     }
                 }
                 Divider()
-                NavigationLink(destination: RecipeListView(selectedIngredients: viewModel.selectedIngredients)) {
+                NavigationLink(destination: RecipeListView()) {
                     Text("Suchen")
-                    
                 }
                 .navigationTitle("PantryChef")
                 .navigationBarTitleDisplayMode(.inline)
                 
             }
+            .environmentObject(viewModel)
         }
     }
 }

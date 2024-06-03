@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    var selectedIngredients: [String] = []
+    @EnvironmentObject var viewmodel: IngredientsViewModel
     var body: some View {
-        Text("Folgende Zutaten wurden ausgewählt: \n \(selectedIngredients)")
+        Text("Folgende Zutaten wurden ausgewählt: \n \(viewmodel.selectedIngredients)")
     }
 }
 
