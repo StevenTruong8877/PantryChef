@@ -14,9 +14,9 @@ struct RecipeListView: View {
     }
 }
 
-#Preview {
-    RecipeListView()
-}
+//#Preview {
+//    RecipeListView()
+//}
 
 //struct RecipeListView: View {
 //    @ObservedObject var viewModel = RecipeListViewModel()
