@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct IngredientsView: View {
-    @StateObject var viewModel = IngredientsViewModel()
+    @StateObject var ingredientsViewModel = IngredientsViewModel()
     
     let columns = [
         GridItem(.adaptive(minimum: 100))
@@ -24,10 +24,10 @@ struct IngredientsView: View {
                 }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 80) {
-                        ForEach(viewModel.ingredients, id: \.self) { item in
+                        ForEach(ingredientsViewModel.ingredientsModel.ingredients, id: \.self) { item in
                             Text(item)
                                 .onTapGesture {
-                                    viewModel.selectIngredient(item)
+                                    ingredientsViewModel.selectIngredient(item)
                                 }
                         }
                     }
@@ -39,11 +39,11 @@ struct IngredientsView: View {
                 }
                 ScrollView {
                     LazyVGrid(columns: columns, spacing: 80) {
-                        ForEach(viewModel.selectedIngredients, id: \.self) { item in
+                        ForEach(ingredientsViewModel.selectedIngredients, id: \.self) { item in
                             Text(item)
                                 .foregroundStyle(.orange)
                                 .onTapGesture {
-                                    viewModel.deselectIngredient(item)
+                                    ingredientsViewModel.deselectIngredient(item)
                                 }
                         }
                     }
@@ -56,7 +56,7 @@ struct IngredientsView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 
             }
-            .environmentObject(viewModel)
+            .environmentObject(ingredientsViewModel)
         }
     }
 }

@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E2ABEF52C0F6C7F00706571 /* SelectIngredientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2ABEF42C0F6C7F00706571 /* SelectIngredientTests.swift */; };
+		1E2ABEF72C19B0C500706571 /* DeselectIngredientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E2ABEF62C19B0C500706571 /* DeselectIngredientTests.swift */; };
 		1E6091142BF4CDCF005AF6B1 /* PantryChefApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6091132BF4CDCF005AF6B1 /* PantryChefApp.swift */; };
 		1E6091182BF4CDD0005AF6B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E6091172BF4CDD0005AF6B1 /* Assets.xcassets */; };
 		1E60911B2BF4CDD0005AF6B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E60911A2BF4CDD0005AF6B1 /* Preview Assets.xcassets */; };
-		1E6091252BF4CDD1005AF6B1 /* PantryChefTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6091242BF4CDD1005AF6B1 /* PantryChefTests.swift */; };
 		1E60912F2BF4CDD1005AF6B1 /* PantryChefUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E60912E2BF4CDD1005AF6B1 /* PantryChefUITests.swift */; };
 		1E6091312BF4CDD1005AF6B1 /* PantryChefUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6091302BF4CDD1005AF6B1 /* PantryChefUITestsLaunchTests.swift */; };
 		1E6091782BF54C21005AF6B1 /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6091772BF54C21005AF6B1 /* IngredientsModel.swift */; };
@@ -39,12 +40,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E2ABEF42C0F6C7F00706571 /* SelectIngredientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectIngredientTests.swift; sourceTree = "<group>"; };
+		1E2ABEF62C19B0C500706571 /* DeselectIngredientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeselectIngredientTests.swift; sourceTree = "<group>"; };
 		1E6091102BF4CDCF005AF6B1 /* PantryChef.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PantryChef.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E6091132BF4CDCF005AF6B1 /* PantryChefApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryChefApp.swift; sourceTree = "<group>"; };
 		1E6091172BF4CDD0005AF6B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E60911A2BF4CDD0005AF6B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1E6091202BF4CDD1005AF6B1 /* PantryChefTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantryChefTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1E6091242BF4CDD1005AF6B1 /* PantryChefTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryChefTests.swift; sourceTree = "<group>"; };
 		1E60912A2BF4CDD1005AF6B1 /* PantryChefUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PantryChefUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E60912E2BF4CDD1005AF6B1 /* PantryChefUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryChefUITests.swift; sourceTree = "<group>"; };
 		1E6091302BF4CDD1005AF6B1 /* PantryChefUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PantryChefUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,7 +127,8 @@
 		1E6091232BF4CDD1005AF6B1 /* PantryChefTests */ = {
 			isa = PBXGroup;
 			children = (
-				1E6091242BF4CDD1005AF6B1 /* PantryChefTests.swift */,
+				1E2ABEF42C0F6C7F00706571 /* SelectIngredientTests.swift */,
+				1E2ABEF62C19B0C500706571 /* DeselectIngredientTests.swift */,
 			);
 			path = PantryChefTests;
 			sourceTree = "<group>";
@@ -310,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E6091252BF4CDD1005AF6B1 /* PantryChefTests.swift in Sources */,
+				1E2ABEF52C0F6C7F00706571 /* SelectIngredientTests.swift in Sources */,
+				1E2ABEF72C19B0C500706571 /* DeselectIngredientTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

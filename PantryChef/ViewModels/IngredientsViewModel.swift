@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import SwiftUI
 
-@MainActor class IngredientsViewModel: ObservableObject {
-    @Published var ingredients: [String] = ["Tomate", "Zwiebel", "Eier", "Kartoffel", "Milch", "Hackfleisch", "Käse", "Sahne", "Reis", "Butter", "Brot", "Nudeln"]
+ class IngredientsViewModel: ObservableObject {
+    @ObservedObject var ingredientsModel = IngredientsModel()
     @Published var selectedIngredients: [String] = []
     
-    
+     
     func selectIngredient(_ ingredient : String) {
         selectedIngredients.append(ingredient)
-        ingredients.removeAll { $0 == ingredient }
+        ingredientsModel.ingredients.removeAll { $0 == ingredient }
     }
     
     func deselectIngredient(_ ingredient : String) {
-        ingredients.append(ingredient)
+        ingredientsModel.ingredients.append(ingredient)
         selectedIngredients.removeAll { $0 == ingredient }
     }
     

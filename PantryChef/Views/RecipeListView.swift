@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct RecipeListView: View {
-    @EnvironmentObject var viewmodel: IngredientsViewModel
+    @EnvironmentObject var ingredientsViewModel: IngredientsViewModel
     var body: some View {
-        Text("Folgende Zutaten wurden ausgewählt: \n \(viewmodel.selectedIngredients)")
+        Text("Folgende Zutaten wurden ausgewählt: \n \(ingredientsViewModel.selectedIngredients)")
     }
 }
 
-#Preview {
-    RecipeListView()
-}
+//#Preview {
+//    RecipeListView()
+//}
 
 //struct RecipeListView: View {
 //    @ObservedObject var viewModel = RecipeListViewModel()
