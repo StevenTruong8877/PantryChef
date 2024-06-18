@@ -64,4 +64,3 @@ struct IngredientsView: View {
 #Preview {
     IngredientsView()
 }
-

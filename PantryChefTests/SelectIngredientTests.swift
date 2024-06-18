@@ -14,7 +14,7 @@ final class SelectIngredientTests: XCTestCase {
         // Given (Arrange)
         let ingredient = "Schokolade"
         let ingredientsViewModel = IngredientsViewModel()
-        ingredientsViewModel.ingredients = ["Karotte", "Schokolade", "Haferflocken"]
+        ingredientsViewModel.ingredientsModel.ingredients = ["Karotte", "Schokolade", "Haferflocken"]
         ingredientsViewModel.selectedIngredients = []
 
         
@@ -22,7 +22,7 @@ final class SelectIngredientTests: XCTestCase {
         ingredientsViewModel.selectIngredient(ingredient)
         
         // Then (Assert)
-        XCTAssertEqual(ingredientsViewModel.ingredients, ["Karotte", "Haferflocken"])
+         XCTAssertEqual(ingredientsViewModel.ingredientsModel.ingredients, ["Karotte", "Haferflocken"])
         XCTAssertEqual(ingredientsViewModel.selectedIngredients, ["Schokolade"])
     }
 }
