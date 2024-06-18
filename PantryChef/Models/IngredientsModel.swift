@@ -9,3 +9,4 @@ import Foundation
 class IngredientsModel: ObservableObject {
     @Published var ingredients: [String] = ["Tomate", "Zwiebel", "Eier", "Kartoffel", "Milch", "Hackfleisch", "Käse", "Sahne", "Reis", "Butter", "Brot", "Nudeln"]
 }
+
