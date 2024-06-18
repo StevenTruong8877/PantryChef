@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
  class IngredientsViewModel: ObservableObject {
-    @ObservedObject var ingredientsModel = IngredientsModel()
+    @Published var ingredientsModel = IngredientsModel()
     @Published var selectedIngredients: [String] = []
     
      
