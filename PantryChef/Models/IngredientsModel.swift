@@ -6,6 +6,6 @@
 
 import Foundation
 
-class IngredientsModel: Codable {
+class IngredientsModel {
     var ingredients: [String] = ["Tomate", "Zwiebel", "Eier", "Kartoffel", "Milch", "Hackfleisch", "Käse", "Sahne", "Reis", "Butter", "Brot", "Nudeln"]
 }

@@ -12,14 +12,15 @@ import SwiftUI
     @Published var recipeItems = [Recipe]()
     
     //    var ingredientsString = ingredients.joined(separator: "%20")
-    var selectedIngredientsString = "Brot"
+    //    var selectedIngredientsString = "Brot"
     
-    func fetchData() async{
-        
+    func fetchData(with ingredients: [String]) {
+        let ingredientsString = ingredients.joined(separator: "%20")
+
         // URL
         // Create URL object with gustar-io url as endpoint
         // url could be nil -> specify error if nil
-        guard let url = URL(string: "https://gustar-io-deutsche-rezepte.p.rapidapi.com/search_api?text=\(selectedIngredientsString)") else {
+        guard let url = URL(string: "https://gustar-io-deutsche-rezepte.p.rapidapi.com/search_api?text=\(ingredientsString)") else {
             print("Fehler beim Erstellen eines url-Objekts")
             return
         }
@@ -37,38 +38,38 @@ import SwiftUI
         // Set request type
         request.httpMethod = "GET"
         
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            let recipes = try JSONDecoder().decode([Recipe].self, from: data)
-            self.recipeItems = recipes
-        }
-        catch {
-            print(error)
-        }
-        //
-        //            // Get URLSession
-        //            let session = URLSession.shared
-        //
-        //            // Create data task
-        //            let dataTask = session.dataTask(with: request) { data, response, error in
-        //
-        //                // Check for errors
-        //                if error == nil && data != nil {
-        //
-        //                    // Try to parse out the data
-        //                    do {
-        //                        let response = try JSONDecoder().decode([Recipe].self, from: data!)
-        //                        self.recipeItems = response
-        //                        //                    print(response)
-        //                    }
-        //                    catch {
-        //                        print(error)
-        //                    }
-        //                }
-        //            }
-        //
-        //            // Start data task
-        //            dataTask.resume()
-        //
+//        do {
+//            let (data, _) = try URLSession.shared.data(for: request)
+//            let recipes = try JSONDecoder().decode([Recipe].self, from: data)
+//            self.recipeItems = recipes
+//        }
+//        catch {
+//            print(error)
+//        }
+        
+        
+                    // Get URLSession
+                    let session = URLSession.shared
+        
+                    // Create data task
+                    let dataTask = session.dataTask(with: request) { data, response, error in
+        
+                        // Check for errors
+                        if error == nil && data != nil {
+        
+                            // Try to parse out the data
+                            do {
+                                 let response = try JSONDecoder().decode([Recipe].self, from: data!)
+                                self.recipeItems = response
+                            }
+                            catch {
+                                print(error)
+                            }
+                        }
+                    }
+        
+                    // Start data task
+                    dataTask.resume()
+        
     }
 }
