@@ -23,8 +23,9 @@ struct RecipeListView: View {
                 }
             }
             .navigationTitle("Rezepte")
-            .onAppear {
-                recipeListViewModel.fetchData(with: ingredientsViewModel.selectedIngredients)
+            .task  {
+                await recipeListViewModel.fetchData(with: ingredientsViewModel.selectedIngredients)
+                
             }
         }
     }

@@ -14,7 +14,7 @@ import SwiftUI
     //    var ingredientsString = ingredients.joined(separator: "%20")
     //    var selectedIngredientsString = "Brot"
     
-    func fetchData(with ingredients: [String]) {
+     func fetchData(with ingredients: [String]) async {
         let ingredientsString = ingredients.joined(separator: "%20")
 
         // URL
@@ -38,38 +38,38 @@ import SwiftUI
         // Set request type
         request.httpMethod = "GET"
         
-//        do {
-//            let (data, _) = try URLSession.shared.data(for: request)
-//            let recipes = try JSONDecoder().decode([Recipe].self, from: data)
-//            self.recipeItems = recipes
-//        }
-//        catch {
-//            print(error)
-//        }
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let recipes = try JSONDecoder().decode([Recipe].self, from: data)
+            self.recipeItems = recipes
+        }
+        catch {
+            print(error)
+        }
         
         
-                    // Get URLSession
-                    let session = URLSession.shared
-        
-                    // Create data task
-                    let dataTask = session.dataTask(with: request) { data, response, error in
-        
-                        // Check for errors
-                        if error == nil && data != nil {
-        
-                            // Try to parse out the data
-                            do {
-                                 let response = try JSONDecoder().decode([Recipe].self, from: data!)
-                                self.recipeItems = response
-                            }
-                            catch {
-                                print(error)
-                            }
-                        }
-                    }
-        
-                    // Start data task
-                    dataTask.resume()
+//                    // Get URLSession
+//                    let session = URLSession.shared
+//        
+//                    // Create data task
+//                    let dataTask = session.dataTask(with: request) { data, response, error in
+//        
+//                        // Check for errors
+//                        if error == nil && data != nil {
+//        
+//                            // Try to parse out the data
+//                            do {
+//                                 let response = try JSONDecoder().decode([Recipe].self, from: data!)
+//                                self.recipeItems = response
+//                            }
+//                            catch {
+//                                print(error)
+//                            }
+//                        }
+//                    }
+//        
+//                    // Start data task
+//                    dataTask.resume()
         
     }
 }
