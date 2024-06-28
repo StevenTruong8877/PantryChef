@@ -49,14 +49,13 @@ struct IngredientsView: View {
                     }
                 }
                 Divider()
-                NavigationLink(destination: RecipeListView()) {
+                NavigationLink(destination: RecipeListView( ingredientsViewModel: ingredientsViewModel)) {
                     Text("Suchen")
                 }
                 .navigationTitle("PantryChef")
                 .navigationBarTitleDisplayMode(.inline)
                 
             }
-            .environmentObject(ingredientsViewModel)
         }
     }
 }

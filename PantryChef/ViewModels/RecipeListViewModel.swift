@@ -11,9 +11,6 @@ import SwiftUI
 @MainActor class RecipeListViewModel: ObservableObject {
     @Published var recipeItems = [Recipe]()
     
-    //    var ingredientsString = ingredients.joined(separator: "%20")
-    //    var selectedIngredientsString = "Brot"
-    
      func fetchData(with ingredients: [String]) async {
         let ingredientsString = ingredients.joined(separator: "%20")
 
