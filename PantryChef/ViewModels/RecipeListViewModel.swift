@@ -38,7 +38,7 @@ import SwiftUI
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             let recipes = try JSONDecoder().decode([Recipe].self, from: data)
-            self.recipeItems = recipes
+            recipeItems = recipes
         }
         catch {
             print(error)

@@ -49,7 +49,7 @@ struct IngredientsView: View {
                     }
                 }
                 Divider()
-                NavigationLink(destination: RecipeListView( ingredientsViewModel: ingredientsViewModel)) {
+                NavigationLink(destination: RecipeListView(ingredientsViewModel: ingredientsViewModel)) {
                     Text("Suchen")
                 }
                 .navigationTitle("PantryChef")
